@@ -1,0 +1,19 @@
+{
+  "name": "bike_service_application_server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/blessondanielrajs/Bike_service_application_server.git"
+  },
+  "author": "dani",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/blessondanielrajs/Bike_service_application_server/issues"
+  },
+  "homepage": "https://github.com/blessondanielrajs/Bike_service_application_server#readme"
+}
