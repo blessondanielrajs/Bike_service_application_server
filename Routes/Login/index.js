@@ -6,7 +6,7 @@ router.post('/', async (req, res) => {
     let USERNAME = req.body.USERNAME;
     let PASSWORD = req.body.PASSWORD;
 
-    console.log(USERNAME + " " + PASSWORD);
+   // console.log(USERNAME + " " + PASSWORD);
     let db1 = mongo.get().collection("user_table")
     let loginUser = await db1.find({ "username": USERNAME, "password": PASSWORD }).toArray()
         .catch(err => res.json({ "Status": -1, msg: "Login Error.t Contact Admin!!" }));
@@ -33,6 +33,7 @@ router.post('/registation', async (req, res) => {
         "_id": new_id,
         "name": req.body.name,
         "ph_no": req.body.ph_no,
+        "username":req.body.email,
         "role": "customer",
         "email": req.body.email,
         "password": req.body.password,
