@@ -19,8 +19,9 @@ router.post('/booking', async (req, res) => {
         "vechicle_name": req.body.vechicle_name,
         "vechicle_model": req.body.vechicle_model,
         "vechicle_number": req.body.vechicle_number,
-        services: req.body.services,
-        BookDate: req.body.BookDate
+        "services": req.body.services,
+        "BookDate": req.body.BookDate,
+        "status":1
 
     }
     let insert = await db1.insertOne(json);
@@ -48,6 +49,16 @@ router.post('/booking', async (req, res) => {
     else {
         res.json({ status: 0 });
     }
+
+});
+
+router.post('/history', async (req, res) => {
+    console.log(req.body)
+  
+    let db1 = mongo.get().collection("booking_table")
+    let data = await db1.find({"customer_id":req.body._id}).toArray()
+
+    res.json({ data: data })
 
 });
 
