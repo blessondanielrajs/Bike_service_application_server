@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const mongo = require('../../mongo');
 
-router.post('/booking', async (req, res) => {
+router.post('/booking', async (req, res) => {//booking a customer query
     console.log(req.body)
     let new_id = 1001;
     let db1 = mongo.get().collection("booking_table")
@@ -21,7 +21,7 @@ router.post('/booking', async (req, res) => {
         "vechicle_number": req.body.vechicle_number,
         "services": req.body.services,
         "BookDate": req.body.BookDate,
-        "status":1
+        "status": 1
 
     }
     let insert = await db1.insertOne(json);
@@ -52,21 +52,14 @@ router.post('/booking', async (req, res) => {
 
 });
 
-router.post('/history', async (req, res) => {
+router.post('/history', async (req, res) => {//query to history of booking
     console.log(req.body)
-  
+
     let db1 = mongo.get().collection("booking_table")
-    let data = await db1.find({"customer_id":req.body._id}).toArray()
+    let data = await db1.find({ "customer_id": req.body._id }).toArray()
 
     res.json({ data: data })
 
 });
-
-
-
-
-
-
-
 
 module.exports = router;

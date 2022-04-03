@@ -2,11 +2,10 @@ const express = require('express');
 const router = express.Router();
 const mongo = require('../../mongo');
 
-router.post('/', async (req, res) => {
+router.post('/', async (req, res) => {//login check query
     let USERNAME = req.body.USERNAME;
     let PASSWORD = req.body.PASSWORD;
 
-   // console.log(USERNAME + " " + PASSWORD);
     let db1 = mongo.get().collection("user_table")
     let loginUser = await db1.find({ "username": USERNAME, "password": PASSWORD }).toArray()
         .catch(err => res.json({ "Status": -1, msg: "Login Error.t Contact Admin!!" }));
@@ -17,11 +16,9 @@ router.post('/', async (req, res) => {
     else {
         res.json({ "Status": 0 });
     }
-
-
 });
 
-router.post('/registation', async (req, res) => {
+router.post('/registation', async (req, res) => {//insert details to query
 
     let new_id = 101;
     let db1 = mongo.get().collection("user_table")
@@ -51,10 +48,5 @@ router.post('/registation', async (req, res) => {
         res.json({ status: 0 });
     }
 });
-
-
-
-
-
 
 module.exports = router;
