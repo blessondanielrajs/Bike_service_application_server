@@ -6,7 +6,7 @@ router.post('/booking', async (req, res) => {//booking a customer query
     console.log(req.body)
     let new_id = 1001;
     let db1 = mongo.get().collection("booking_table")
-    let max = await db1.find({ "customer_id": req.body.customer_id }).sort({ _id: -1 }).limit(1).toArray()
+    let max = await db1.find({ }).sort({ _id: -1 }).limit(1).toArray()
     if (max.length !== 0)
         new_id = parseInt(max[0]._id) + 1;
     let json = {
@@ -26,7 +26,7 @@ router.post('/booking', async (req, res) => {//booking a customer query
     }
     let insert = await db1.insertOne(json);
 
-    if (insert.acknowledged) {
+    if (insert.acknowledged) {//email sending when customer booking
         const send = require('gmail-send')({
             user: 'blessondanielraj.s@gmail.com',
             pass: 'Da12IeL3',

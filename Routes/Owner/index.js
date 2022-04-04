@@ -57,7 +57,7 @@ router.post('/delivery', async (req, res) => {
     let insert = await db1.updateOne(query, update, options);
     let data = await db1.find().toArray()
     if (insert.acknowledged) {
-        const send = require('gmail-send')({
+        const send = require('gmail-send')({//email.send when delivery time
             user: 'blessondanielraj.s@gmail.com',
             pass: 'Da12IeL3',
             to: req.body._id.customer_email,
@@ -86,5 +86,4 @@ console.log(del);
     let data = await db1.find().toArray()
     res.json({ status: 1, "data": data });
 });
-
 module.exports = router;

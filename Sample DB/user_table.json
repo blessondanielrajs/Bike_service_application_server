@@ -1,0 +1,46 @@
+{ 
+    "_id" : NumberInt(104), 
+    "name" : "priya", 
+    "ph_no" : "8695797294", 
+    "username" : "urldan323@gmail.com", 
+    "role" : "customer", 
+    "email" : "urldan323@gmail.com", 
+    "password" : "customer", 
+    "place" : "madurai"
+}
+{ 
+    "_id" : 100.0, 
+    "role" : "owner", 
+    "username" : "owner", 
+    "password" : "owner"
+}
+{ 
+    "_id" : NumberInt(105), 
+    "name" : "rajesh", 
+    "ph_no" : "9025588771", 
+    "username" : "urldan324@gmail.com", 
+    "role" : "customer", 
+    "email" : "urldan324@gmail.com", 
+    "password" : "customer", 
+    "place" : "natham"
+}
+{ 
+    "_id" : NumberInt(106), 
+    "name" : "kumar", 
+    "ph_no" : "9025588772", 
+    "username" : "blessondanielraj.s@gmail.com", 
+    "role" : "customer", 
+    "email" : "blessondanielraj.s@gmail.com", 
+    "password" : "customer", 
+    "place" : "madurai"
+}
+{ 
+    "_id" : NumberInt(107), 
+    "name" : "dani", 
+    "ph_no" : "9025588773", 
+    "username" : "blessondanielraj.mca@gmail.com", 
+    "role" : "customer", 
+    "email" : "blessondanielraj.mca@gmail.com", 
+    "password" : "customer", 
+    "place" : "karur"
+}
